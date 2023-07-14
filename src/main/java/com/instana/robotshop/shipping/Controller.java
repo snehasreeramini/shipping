@@ -20,7 +20,7 @@ import org.springframework.http.HttpStatus;
 public class Controller {
     private static final Logger logger = LoggerFactory.getLogger(Controller.class);
 
-    private String CART_URL = String.format("http://%s/shipping/", getenv("CART_ENDPOINT", "cart"));
+    private String CART_URL = String.format("http://%s/shipping/", getenv("CART_ENDPOINT", "b_cart"));
 
     @Autowired
     private CityRepository cityrepo;
@@ -118,7 +118,7 @@ public class Controller {
         String cart = helper.addToCart(id, body);
 
         if (cart.equals("")) {
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "cart not found");
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "b_cart not found");
         }
 
         return cart;
