@@ -27,7 +27,7 @@ public class CartHelper {
 
     // TODO - Remove deprecated calls
     public String addToCart(String id, String data) {
-        logger.info("add shipping to cart {}", id);
+        logger.info("add shipping to b_cart {}", id);
         StringBuilder buffer = new StringBuilder();
 
         CloseableHttpClient httpClient = null;
